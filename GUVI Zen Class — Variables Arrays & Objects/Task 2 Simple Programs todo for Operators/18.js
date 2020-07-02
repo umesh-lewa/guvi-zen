@@ -1,0 +1,9 @@
+var a = 4;
+var b = 2;
+var sum = +a + +b;
+var difference = +a - +b;
+var product = +a * +b;
+var quotient = +a / +b;
+var remainder = +a % +b;
+var increment = a++;
+var decrement = a--;
