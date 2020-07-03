@@ -35,9 +35,41 @@ console.log(output);
 
 // 5. Find the friends names who has letter ‘a’ and return the list.
 
+var output = [];
+var name = "";
+for (var i = 0; i < friends.length; i++) {
+    name = friends[i];
+    if(name.includes("a")){
+        output.push(friends[i]);
+    }else{
+
+    }    
+}
+console.log(output);
+
 // 6. Find the avg length of all the friends names. Get the individual length of the names and do the avg.
 
+var sum = 0;
+var name = "";
+for (var i = 0; i < friends.length; i++) {
+    name = friends[i];
+    sum = +sum + name.length;     
+}
+console.log(sum/friend.length);
+
 // 7. Find the names and return the list starting with letter M.
+
+var output = [];
+var name = "";
+for (var i = 0; i < friends.length; i++) {
+    name = friends[i];
+    if(name.startsWith("M")){
+        output.push(friends[i]);
+    }else{
+
+    }    
+}
+console.log(output);
 
 // 8. Find the name with max characters and return the name.
 
