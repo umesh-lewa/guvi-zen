@@ -1,1 +1,1 @@
-var miles = meters*0.000621371192;
+var miles = parseFloat(meters*0.000621371192);
