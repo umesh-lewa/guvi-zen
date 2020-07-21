@@ -1,0 +1,9 @@
+DOM stands for  Document Object Model
+All web pages are are in this format
+The DOM itself follows a tree structure.
+the reason being in a tree structure searching for a
+certain element is easier , and also it greatly reduces the 
+time complexity for the operations, provided it is sorted in 
+any logical order.
+In JS we can perform dom manipulation via the elements
+DOM is not something we see directly. It is internal to the web browser.
