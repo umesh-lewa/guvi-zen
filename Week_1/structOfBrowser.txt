@@ -1,8 +1,0 @@
-There are two main compnents of a browser are render engine 
-javascript engine. The render engine is the one that renders the
-dom visually during runtime.
-The javascript engine executes the javascript  code in the  browser.
-different browsers use different engines  for both if the  above two engines.
-Google chrome uses V8 engine, which is what node.js also uses.
-So, node.js is simply a  way for you to execute js  code outside of
-the browser in the server side. 
