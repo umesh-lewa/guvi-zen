@@ -1,0 +1,31 @@
+HTTP 1.0 vs 1.1
+
+Being a user of the internet, you must have come across the use of HTTP. This is one of the most commonly viewed letters especially for the millions of pages that are currently operated online. It is this very item that is the issue of discussion here. Apparently, if you know something about HTTP, there are two versions, 1.0 and 1.1. Just what do the two versions mean? Below is a step by step review of HTTP 1.0 and Http 1.1.
+
+The term HTTP refers to Hyper Text Transfer Protocol. This acts as both the client and server protocol of which defines how messages within the worldwide web are transmitted and formatted. HTTP 1.0 was introduced in early 1996 when there was the onset of companies moving online for business.  The popularity of use of HTTP has grown with over 75% of traffic on the internet being solely reliant on it.
+
+HTTP 1.0 could only define up to 16 status codes which was a reserved number. The main limitation of using the 16 status codes was that there was poor resolution reporting that was noticed and thus there was the need to come up with the HTTP 1.1. HTTP 1.1 came with 24 status codes that were able to solve the previous limitations that HTTP 1.1 faced. Error reporting was done faster and there was easy detection of errors when they occurred.
+
+Another plus that came with use of the HTTP 1.1 was the warning header that had the capability of carrying out multiple number of secondary status alerts. The main aim of the secondary status indications in HTTP 1.1 was to bring notice to the recipient of a problem when a successful request was made. The warning requests that were instituted in HTTP1.1 could be divided into two classes.  The classes were based on the first digit that was presented on the three digit code.  In one class, there was deletion of the warning upon successful validation of the code into the cache. The second class was one that was retained and it comes with a revalidated entry of the cache.
+
+HTTP 1.0 use comes with only allowance for the basic authentication with this facing a challenge of user names and passwords that are used being unencrypted. This as you would rightly suppose brings forth the factor of risk of being snooped upon. HTTP 1.0 also does not have dependencies and thus the information collected by the activity of snooping can be used later in the future. The coming of HTTP 1.1 did correct the issue, offering the use of Digest Access Authentication. This mirrors basic authentication and allows for servers top make use of a onetime value which in effect make snooping quite difficult to achieve. A checksum of the password, username and one time value is made and these are all encrypted. You can thus rest assured that no snooping is possible when using HTTP 1.1.
+
+HTTP 1.0 design needed a new TCP connection for every request that was made through it. This caused a challenge as there was the cost and time of setting up a new TCP connection with every request, making the connection very slow. To deal with this HTTP1.1 came up with the use of persistent connections and also the use of pipeline requests to work on the persistent connections.
+
+Summary
+
+HTTP means Hyper Text Transfer Protocol
+
+HTTP 1.1 generally an upgrade of limitations of HTTP 1.0
+
+HTTP 1.0 can define 16status codes
+
+HTTP 1.1 can define 24 status codes
+
+HTTP 1.1 has a warning header capable of producing many secondary status alerts
+
+HTTP 1.0 authentication unsafe as it is not encrypted
+
+HTTP 1.1 safe as it uses a checksum of username, password and one time value.
+
+http://www.differencebetween.net/technology/protocols-formats/difference-between-http-1-0-and-1-1/
