@@ -1,0 +1,9 @@
+GET and POST are both REST Api methods,
+
+Some of the main differences between them are,
+
+GET method places the parameters inside the URI while POST method appends the parameters into the body.
+
+GET is essentially used for fetching the information. As against, the purpose of POST method is to update the data.
+
+In GET method the information is visible in the URL which increases vulnerabilities and the risk of hacking. In contrast, the POST method does not show variable in URL and multiple encoding techniques can also be used in it, which make it resilient.

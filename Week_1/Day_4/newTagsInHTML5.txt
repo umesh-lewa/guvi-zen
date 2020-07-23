@@ -1,0 +1,46 @@
+Some of the new tags in HTML 5 are,
+
+<article>  
+
+A self-contained composition in a document that is independently distributable or reusable, e.g. a forum post, a magazine or newspaper article, or blog entry.
+
+<aside>  
+
+Defines content tangentially related to the content surrounding it, such as related reading links and glossaries, which may or not be nested within an article element.
+
+<figcaption>  
+
+Defines a caption for a <figure> element
+
+<figure>  
+
+Used in conjunction with the <figcaption> element to mark up diagrams, illustrations, photos, and code listings, etc.
+
+<header>  
+
+Not be confused with the <head> element, the <header> tag typically contains the section?s heading (an h1?h6 element), as well as other content, such as a navigation links, table of contents, a search form, or any relevant logos.
+
+<footer>  
+
+For content located at the very bottom of the web page or nearest section. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, etc. It in turn may contain entire sections, with appendices, indexes, license agreements, and other similar content.
+
+<main>  
+
+Delineates the main content of the body of a document or web app. As such, the main content area holds content that is directly related to or expands upon the central topic of the page. Moreover, it helps screen readers and other assistive technologies understand where the main page content begins.
+
+<mark>  
+
+Meant to bring the reader?s attention to a part of the text due to its contextual relevance.
+
+<nav>  
+
+Denotes a section with navigation links, either to other pages or to parts within the same page.
+
+<section>  
+
+Unlike the <div> tag, which is used for a myriad of purposes, not the least of which is formatting content, the <section> element demarcates a thematic grouping of content. Each section typically includes a heading element and associated content within DIVs and Paragraphs. Examples include introduction, blog entries, and contact information.
+
+<summary>  
+
+An optional element that summarizes the contents of the parent details element. As such, it may contain a description, caption, or legend.
+

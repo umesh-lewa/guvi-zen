@@ -2,8 +2,7 @@ let countryDetails = [{"name":"Afghanistan","topLevelDomain":[".af"],"alpha2Code
 
 
 for(let i = 0 ; i < countryDetails.length ; i++){
-	console.log("Name : "+countryDetails[i].name);
-	console.log("Capital : "+countryDetails[i].capital);
-	console.log("Flag : "+countryDetails[i].flag);
-	console.log("Language : "+countryDetails[i].languages);
+	countryDetails[i].id = i;
 }
+
+console.log(countryDetails);
