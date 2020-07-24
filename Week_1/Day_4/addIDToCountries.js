@@ -5,4 +5,4 @@ for(let i = 0 ; i < countryDetails.length ; i++){
 	countryDetails[i].id = i;
 }
 
-console.log(countryDetails);
+console.log(JSON.stringify(countryDetails));
