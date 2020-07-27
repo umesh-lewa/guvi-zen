@@ -1,3 +1,24 @@
 Follwed all the steps in ,
 
 https://help.symantec.com/cs/DCS1.0/DCS1_0/v107680513_v99309261/Enabling-CORS?locale=EN_US
+
+
+Add-on for firefox,
+
+https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/
+
+So the key points to know by now:
+
+    CORS is a mechanism built into web browser. It’s not a UI code issue.
+    To fix CORS problems, you need to make changes on the API side.
+
+But… but…, you protest, I don’t have access to that API!
+
+Well, in that case, you have two options:
+
+    Ask whoever manages API to fix/add CORS support
+    Create middleware
+
+From,
+
+https://blog.container-solutions.com/a-guide-to-solving-those-mystifying-cors-issues

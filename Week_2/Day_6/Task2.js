@@ -8,7 +8,7 @@ var myrequest = new XMLHttpRequest()
 var url_string = 'https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com';
 //var url_string = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=f21dc7c3c2e1aeb45da297ca74d853ce';
 // Open a new connection, using the GET request on the URL endpoint
-myrequest.open('GET',url_string , true)
+myrequest.open('GET',url_string)
 myrequest.send();
 myrequest.onload = function() {
   // Begin accessing JSON data here
