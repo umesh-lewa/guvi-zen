@@ -1,0 +1,183 @@
+https://rollbar.com/blog/top-10-javascript-errors/
+
+--> Uncaught TypeError: Cannot read property
+
+This one occurs in Chrome when you read a property or call a method on an undefined object
+
+--> TypeError: ‘undefined’ is not an object
+
+You have to handle 'undefined'. Which can be done in these ways:
+
+typeof(foo) == 'undefined'
+typeof foo !== 'undefined'
+
+You can use typeof like so -
+
+return (typeof (gameRegion) !== "undefined" && 
+        typeof(gameRegion.yPos) !== "undefined" &&
+        ypos > gameRegion.yPos);
+
+--> TypeError: null is not an object
+
+This is an error that occurs when you read a property or call a method on a null object. You can test this very easily in the Safari Developer Console.
+
+Interestingly, in JavaScript, null and undefined are not the same, which is why we see two different error messages. Undefined is usually a variable that has not been assigned, while null means the value is blank. To verify they are not equal, try using the strict equality operator:
+
+Any JS code that executes and deals with DOM elements should execute after the DOM elements have been created. JS code is interpreted from top to down as laid out in the HTML. So, if there is a tag before the DOM elements, the JS code within script tag will execute as the browser parses the HTML page. You will get this error if the DOM elements have not been created before loading the script.
+
+In this example, we can resolve the issue by adding an event listener that will notify us when the page is ready. Once the addEventListener is fired, the init() method can make use of the DOM elements.
+
+<script>
+  function init() {
+    var myButton = document.getElementById("myButton");
+    var myTextfield = document.getElementById("myTextfield");
+    myButton.onclick = function() {
+      var userName = myTextfield.value;
+    }
+  }
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+      init();
+    }
+  });
+</script>
+
+<form>
+  <input type="text" id="myTextfield" placeholder="Type your name" />
+  <input type="button" id="myButton" value="Go" />
+</form>
+
+
+
+--> Unknown(Script Error)
+
+This happens when your JS code is hosted on a different domain (i.e. a CDN). To fix, set Access-Control-Allow-Origin: * on the JS file, and crossorigin="anonymous" on the <script> tag.
+
+1. Send the Access-Control-Allow-Origin header
+
+ExpressJS
+Add the following to your app:
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+2. Set crossorigin="anonymous" on the script tag
+In your HTML source, for each of the scripts that you've set the access-control-allow-origin header for, set crossorigin="anonymous" on the <SCRIPT> tag.
+
+--> TypeError: Object doesn’t support property
+
+This is an error that occurs in IE when you call an undefined method. You can test this in the IE Developer Console
+
+This is a common problem for IE in web applications that employ JavaScript namespacing. When this is the case, the problem 99.9% of the time is IE’s inability to bind methods within the current namespace to the this keyword. For example, if you have the JS namespace Rollbar with the method isAwesome. Normally, if you are within the Rollbar namespace you can invoke the isAwesome method with the following syntax:
+
+this.isAwesome();
+Chrome, Firefox and Opera will happily accept this syntax. IE, on the other hand, will not. Thus, the safest bet when using JS namespacing is to always prefix with the actual namespace.
+
+Rollbar.isAwesome();
+
+--> Uncaught TypeError: undefined is not a function
+
+This is a common JavaScript error that happens when you try to call a function before it is defined. You get this error when you try to execute a function that is uninitialized or improperly initialized . It means that the expression did not return a function object. So you have to figure out what you are trying to execute isn't a function.
+
+For instance, while this code works as expected:
+
+ 
+var greetings= function () {
+    return 'Good Morning..!!'
+};
+alert(greetings());
+
+If you reverse the order of the statements the Uncaught TypeError: undefined is not a function error will occur:
+
+ 
+alert(greetings());
+var greetings= function () {
+    return 'Good Morning..!!'
+};
+
+So, It's better you double check that your scripts are being loaded correctly.
+
+This weird behaviour depends on how you define the functions and when you call them.
+
+
+--> Uncaught RangeError maximum call stack:
+
+It means that somewhere in your code, you are calling a function which in turn calls another function and so forth, until you hit the call stack limit.
+
+This is almost always because of a recursive function with a base case that isn't being met.
+
+Viewing the stack
+Consider this code...
+
+(function a() {
+    a();
+})();
+
+As you can see, the call stack grows until it hits a limit: the browser hardcoded stack size or memory exhaustion.
+
+In order to fix it, ensure that your recursive function has a base case which is able to be met...
+
+(function a(x) {
+    // The following condition 
+    // is the base case.
+    if ( ! x) {
+        return;
+    }
+    a(--x);
+})(10);
+
+--> TypeError cannot read property length :
+
+This is an error that occurs in Chrome because of reading length property for an undefined variable. You can test this in the Chrome Developer Console.
+
+You normally find length defined on an array, but you might run into this error if the array is not initialized or if the variable name is hidden in another context. Let’s understand this error with the following example.
+
+var testArray= ["Test"];
+
+function testFunction(testArray) {
+    for (var i = 0; i < testArray.length; i++) {
+      console.log(testArray[i]);
+    }
+}
+
+testFunction();
+When you declare a function with parameters, these parameters become local ones. This means that even if you have variables with names testArray, parameters with the same names within a function will still be treated as local.
+
+You have two ways to resolve your issue:
+
+Remove parameters in the function declaration statement (it turns out you want to access those variables that are declared outside of the function, so you don’t need parameters for your function):
+
+var testArray = ["Test"];
+
+/* Precondition: defined testArray outside of a function */
+function testFunction(/* No params */) {
+   for (var i = 0; i < testArray.length; i++) {
+     console.log(testArray[i]);
+   }
+}
+
+testFunction();
+Invoke the function passing it the array that we declared:
+
+var testArray = ["Test"];
+
+function testFunction(testArray) {
+  for (var i = 0; i < testArray.length; i++) {
+     console.log(testArray[i]);
+   }
+}
+
+testFunction(testArray);
+
+--> ReferenceError: event is not defined
+
+This error is thrown when you try to access a variable that is undefined or is outside the current scope
+
+If you’re getting this error when using the event handling system, make sure you use the event object passed in as a parameter. Older browsers like IE offer a global variable event, and Chrome automatically attaches the event variable to the handler. Firefox will not automatically add it. Libraries like jQuery attempt to normalize this behavior. Nevertheless, it’s best practice to use the one passed into your event handler function.
+
+document.addEventListener("mousemove", function (event) {
+  console.log(event);
+})
