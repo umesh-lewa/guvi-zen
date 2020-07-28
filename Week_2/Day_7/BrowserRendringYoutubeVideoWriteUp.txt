@@ -1,0 +1,22 @@
+Rendring in browser,
+
+parsing the html and the css gives the render tree  from which we get a layout
+
+the dom tree is what we get from the html tags
+
+link and style could halt the execution of javascript
+
+we should always paste <script> tags at the bottom
+
+CSS is represented as CSS Object Model , similar to dom, called CSSOM
+
+So, render tree can be visualised as DOM + CSSOM
+
+whatever does not need to be deisplayed visually does not go into render tree
+
+In the final painting process , a bitmap is produced, this used to be done only by CPU,
+now it has become GPU acclerated also
+
+Link,
+
+https://www.youtube.com/watch?v=SmE4OwHztCc

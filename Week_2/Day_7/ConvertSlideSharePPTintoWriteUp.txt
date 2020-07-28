@@ -1,0 +1,37 @@
+Server Response Status can be got from HTTP response codes,
+
+HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+
+Informational responses (100–199),
+Successful responses (200–299),
+Redirects (300–399),
+Client errors (400–499),
+and Server errors (500–599).
+
+No Network Connection,
+
+ Network Errors
+If a network error occurs while transmitting a request message, error information is available from the underlying network component; e.g. Windows Sockets or WinInet. Monitoring tools like HttpWatch can display error codes for situations such as:
+
+The host name could not be converted into an IP address, perhaps because an invalid host name was used or because no DNS lookup service is available.
+The browser could not connect to the web server. This may happen if the web server is not running or is listening on the wrong port.
+The network connection may be broken while transmitting the request message, perhaps because a physical network connection has been interrupted, e.g. a network cable has been unplugged.
+
+Server Response Content,
+
+When the server responds with a JSON string, it tells the client that the message body contains JSON string with 'Content-Type: application/json' header.
+
+for example the response code might be 200,
+
+and the message might be,
+
+{
+    "success": "true"
+}
+
+
+
+https://www.httpwatch.com/httpgallery/errors/
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
