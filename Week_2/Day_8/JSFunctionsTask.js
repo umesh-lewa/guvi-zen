@@ -190,7 +190,8 @@ function findPerimeter(num1,num2) {
 
 	return parseInt(2* (+num1 + +num2));
 }
-var peri = findPerimeter(6,7)
+var peri = findPerimeter(6,7);
+console.log(peri);
 
 /*
 
@@ -217,6 +218,7 @@ function lessThan100(num1,num2) {
 	}
 }
 var res = lessThan100(22,15)
+console.log(res);
 
 /*
 
@@ -234,8 +236,11 @@ var res = remainder(1,3)
 */
 
 function remainder(num1,num2) {
+    
+    return (+num1 % +num2);
 }
 var res = remainder(1,3)
+console.log(res);
 
 /*
 
@@ -262,6 +267,7 @@ function CountAnimals(tur,horse,pigs) {
 	return ((+tur * 2) + (+horse * 4) + (+pigs * 4));
 }
 var legs = CountAnimals(2,3,5)
+console.log(legs);
 
 /*
 
@@ -283,6 +289,7 @@ function frames(num1,num2) {
 	return (+num2 * (+num1 * 60));
 }
 var fps = frames(1,2)
+console.log(fps);;
 
 /*
 
@@ -306,7 +313,8 @@ function divisibleByFive(num1) {
 		return false;
 	}
 }
-var divisible = divisibleByFive(5)
+var divisible = divisibleByFive(5);
+console.log(divisible);
 
 /*
 
@@ -509,6 +517,7 @@ function getLastElement(array){
 		return array[array.length - 1];
 	}
 }
+console.log(getLastElement([1, 2, 3, 4]));
 
 /*
 
@@ -535,7 +544,7 @@ function getProperty(obj, key) {
 */
 
 var obj = {
- mykey: “value”
+ mykey: "value"
 };
 
 function getProperty(obj, key) {
@@ -570,7 +579,7 @@ function addProperty(obj, key){
 */
 
 var obj = {
- mykey: “value”
+ mykey: "value"
 };
 function addProperty(obj, key){
 
@@ -623,12 +632,16 @@ var ar2 = function countPositivesSumNegatives(arr) {
 			negativeSum += +arr[i];
 		}
 	}
-	newArr.push(positiveSum);
-	newArr.push(negativeSum);
+	
+	//console.log(positiveSum);
+	//console.log(negativeSum);
+	newArr.push(+positiveSum);
+	newArr.push(+negativeSum);
 
 	return newArr;
 }
-console.log(ar2);
+console.log(ar2(arr));
+
 
 /*
 Problem:
@@ -644,7 +657,7 @@ console.log(ar2);
 
 */
 
-function getPositives(ar){
+function getPositives(arr){
 
 	var newArr = [];
 
@@ -682,11 +695,12 @@ function powersOfTwo(n){
 
 */
 
+console.log(powersOfTwo(2));
 function powersOfTwo(n){
 	
 	var newArr = [];
 
-	for(let = 0 ; i <= n ; i++){
+	for(let i = 0 ; i <= n ; i++){
 		newArr.push(Math.pow(2,+i));
 	}  
 
@@ -709,6 +723,8 @@ console.log(“Max: “, max);
 
 */
 
+var max = findMax(ar);
+console.log(max);
 function findMax(ar){
 
 	return Math.max(...ar);
@@ -743,6 +759,7 @@ function isPrime(n)
 }
 */
 
+console.log(printPrimes(100));
 function printPrimes(nPrimes){
  var n = 0;
  var i = 2;
@@ -756,7 +773,7 @@ function printPrimes(nPrimes){
  }
 }
 // Returns true if a number is prime
-function isPrime(n){
+function isPrime(num){
 
 	if(num < 2) return false;
     for (var i = 2; i < num; i++) {
@@ -784,24 +801,26 @@ function isPrime(n)
 }
 
 */
-
-console.log(getPrimes(10, 100));
+var out = getPrimes(10, 100);
+console.log(out);
 function getPrimes(nPrimes, startAt){
 
  var n = 0;
  var i = 2;
- 
+ var primeArr = [];
+
  while(n < nPrimes){
  	if (isPrime(i) && +i > +startAt){
- 		console.log(n, " → ", i);
+ 		//console.log(n, " → ", i);
+ 		primeArr.push(i);
  		n++;
  	} 
  i++;
  }
-
+ return primeArr;
 }
 // Returns true if a number is prime
-function isPrime(n){
+function isPrime(num){
 
 	if(num < 2) return false;
     for (var i = 2; i < num; i++) {
@@ -891,10 +910,10 @@ function sumCSV(s)
 
 */
 
-console.log(sumCSV(“1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9”));
+console.log(sumCSV("1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9"));
 function sumCSV(s){
 	
-	let arr = s.plit(",");
+	let arr = s.split(",");
 
 	let sum = 0;
 
