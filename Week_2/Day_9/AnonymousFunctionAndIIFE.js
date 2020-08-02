@@ -49,12 +49,13 @@ var arr = ["some","thing","here"];
 (function() {
   for(let i = 0 ; i < arr.length ; i++){
   	let str = arr[i].split("");
-  	console.log(str);
+  	//console.log(str);
   	//s[0].toUpperCase();
   	str[0]=str[0].charAt(0).toUpperCase()+str[0].slice(1);
     //console.log(str.join(""))
     arr[i] = str.join("");
   }
+  console.log(arr);
   return arr;
 })(arr);
 
@@ -77,7 +78,7 @@ var arr = [2,3,4,5,6,7,8,9,10];
 		var sum = arr.reduce(function(a, b){
         return a + b;
     }, 0);
-
+  console.log(sum);  
 	return sum;
  })(arr);
 
@@ -134,7 +135,7 @@ var arr = [2,3,4,5,6,7,8,9,10];
           newArr.push(arr[n]);
         }
       }
-      
+      console.log(newArr);
       return newArr;
 })(arr);
 
@@ -182,7 +183,7 @@ var arr = ["racecar","some","thing","madam"];
 			//console.log(arr[i]);
 		}
 	}
-	
+	console.log(newArr);
 	return newArr;
 })(arr);
 
@@ -235,7 +236,8 @@ var arr = [2,3,2,5,6,7,7,7,10];
 (function(){
 
 	var s = new Set(arr);
-
+  
+  console.log(s);
 	return s;
 })(arr);
 
@@ -257,10 +259,11 @@ console.log(out);
 
 var arr = [1,2,3,4,5,6,7];
 (function(nums, k){
-	let i = 0;
-	while(i < k){
-		nums.unshift(nums.pop());
-		i++
-	}
-	return nums;
-})(arr);
+  let i = 0;
+  while(i < k){
+    nums.unshift(nums.pop());
+    i++
+  }
+    console.log(nums);
+  return nums;
+})(arr,2);
