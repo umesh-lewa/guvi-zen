@@ -588,7 +588,7 @@
        </SELECT>
        as proof of address, 
   <SELECT id="selectAccordingToCountryPOB"  NAME="PANDOB">
-  <OPTION VALUE="">--Please Select--</OPTION>
+  <OPTION VALUE="">Select</OPTION>
   </SELECT>
         <span id ='dobt'>as proof of date of birth and</span>    
 
@@ -623,8 +623,8 @@
                   <table class="fee_table">
                   <tr class="fee"><td class="fee" colspan="3"><b>Physical PAN Card & e-PAN Card</b></td></tr>
                   <tr class="fee"><td class="fee"><b>PAN Card Dispatch</b></td ><td class="fee"><b>Mode of PAN application</b></td><td class="fee"><b>Processing Fee including GST</b></td></tr>
-                  <tr class="fee"><td class="fee">Indian address</td><td class="fee">DSC Based</td><td class="fee"><img height = 11 src = "/pan/images/rp.png" width = 10> 101.00</td></tr>
-                  <tr class="fee"><td class="fee">Foreign address</td><td class="fee">DSC Based</td><td class="fee"><img height = 11 src = "/pan/images/rp.png" width = 10> 1011.00</td></tr>
+                  <tr class="fee"><td class="fee">Indian address</td><td class="fee">DSC Based</td><td class="fee"> 101.00</td></tr>
+                  <tr class="fee"><td class="fee">Foreign address</td><td class="fee">DSC Based</td><td class="fee"> 1011.00</td></tr>
                   </table>
                   </div>
                   </td>
@@ -635,7 +635,7 @@
                   <table class="fee_table">
                     <tr class="fee"><td class="fee" colspan="2"><b>Only e-PAN Card</b></td></tr>
                     <tr class="fee"><td class="fee"><b>Mode of PAN application</b></td><td class="fee"><b>Processing Fee including GST</b></td></tr>
-                    <tr class="fee"><td class="fee">DSC Based</td><td class="fee"><img height = 11 src = "/pan/images/rp.png" width = 10> 66.00</td></tr>
+                    <tr class="fee"><td class="fee">DSC Based</td><td class="fee"> 66.00</td></tr>
                     </table>
                   </div>
                   </td>
@@ -663,16 +663,16 @@
   <TD>&nbsp;</TD>
   <TD COLSPAN=2><B>2. Payment Details</B></TD>
 <TR>
-<TR id="payModeDDCHQ">
+<TR id="PAYMODEFORPAN">
   <TD>&nbsp;</TD>
-      <TD COLSPAN=2>Demand Draft/Cheque <I>(in favour of 'NSDL - PAN' for <img height = 11 src = "/pan/images/rp.png" width = 10> <B id="amount1"></B>)</I>
+      <TD COLSPAN=2>Demand Draft/Cheque <I>(in favour of 'NSDL - PAN' for)</I>
   </TD>
 </TR>
     
 <TR id="payModeDD">
   <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="D"  ></TD>
   <TD COLSPAN=2>
-    <B>Demand Draft number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DD_NUM VALUE="" SIZE=14 MAXLENGTH=14 >&nbsp;&nbsp;
+    <B>Demand Draft number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DD_NUM >&nbsp;&nbsp;
     <B>Dated </B>
        <FONT SIZE=-1>DD</FONT>
          <SELECT NAME=PAN_DD_DT_DD >
@@ -683,18 +683,18 @@
          </SELECT>
 
       <FONT SIZE=-1> YYYY</FONT>
-      <INPUT TYPE=text NAME=PAN_DD_DT_YYYY VALUE="" SIZE=4 MAXLENGTH=4 >
-    <B>Amount</B>&nbsp;&nbsp; <img height = 11 src = "/pan/images/rp.png" width = 10> <B id="amount2"></B>&nbsp;&nbsp;
-    <BR><B>Drawn On</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DD_BANK_NM VALUE="" SIZE=50 MAXLENGTH=50 >&nbsp;&nbsp;
+      <INPUT TYPE=text NAME=PAN_DD_DT_YYYY >
+    <B>Amount</B>&nbsp;&nbsp; <B id="amount2"></B>&nbsp;&nbsp;
+    <BR><B>Drawn On</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DD_BANK_NM >&nbsp;&nbsp;
     <B>payable at Mumbai.</B>
   </TD>
 </TR>
 
    
 <TR id="payModeCHQ">
-  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE id="PAYMODE_C" VALUE="C"  ></TD>
+  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE  ></TD>
   <TD COLSPAN=2>
-    <B>Cheque number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CHQ_NUM VALUE="" SIZE=14 MAXLENGTH=14 >&nbsp;&nbsp;
+    <B>Cheque number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CHQ_NUM >&nbsp;&nbsp;
     <B>Dated </B>
        <FONT SIZE=-1>DD</FONT>
          <SELECT NAME=PAN_CHQ_DT_DD >
@@ -705,11 +705,11 @@
          </SELECT>
 
       <FONT SIZE=-1> YYYY</FONT>
-        <INPUT TYPE=text NAME=PAN_CHQ_DT_YYYY VALUE="" SIZE=4 MAXLENGTH=4 >
-    <B>Amount</B>&nbsp;&nbsp; <img height = 11 src = "/pan/images/rp.png" width = 10> <B id="amount3"></B>&nbsp;&nbsp;
-    <BR><B>Drawn On</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CHQ_BANK_NM VALUE="" SIZE=50 MAXLENGTH=50 >&nbsp;&nbsp;Bank, deposited at HDFC Bank,
-    <INPUT TYPE=text NAME=PAN_CHQ_BRANCH VALUE="" SIZE=50 MAXLENGTH=50 > Branch at
-    <INPUT TYPE=text NAME=PAN_CHQ_LOCATION VALUE="" SIZE=50 MAXLENGTH=50 > location (city/town).
+        <INPUT TYPE=text NAME=PAN_CHQ_DT_YYYY >
+    <B>Amount</B>&nbsp;&nbsp; </B>&nbsp;&nbsp;
+    <BR><B>Drawn On</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CHQ_BANK_NM >&nbsp;&nbsp;Bank, deposited at HDFC Bank,
+    <INPUT TYPE=text NAME=PAN_CHQ_BRANCH > Branch at
+    <INPUT TYPE=text NAME=PAN_CHQ_LOCATION > location (city/town).
   </TD>
 </TR>
 <TR style="display:none">
@@ -717,7 +717,7 @@
     <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="O" >
   </TD>
   <TD COLSPAN=2>
-    <B>Credit Card / Debit Card ( <img height = 11 src = "/pan/images/rp.png" width = 10> <B id="amount4"></B>&nbsp;plus applicable bank charges )</B>
+    <B>Credit Card / Debit Card (</B>&nbsp;plus applicable bank charges )</B>
   </TD>
 </TR>
 <TR>
@@ -725,7 +725,7 @@
     <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="B"  >
   </TD>
   <TD COLSPAN=2>
-    <B>Online Payment <span style="display:none">(<img height = 11 src = "/pan/images/rp.png" width = 10> <B id = "amount5"></B> &nbsp;&nbsp;&nbsp; <a href="/pan/Bank.html" target="_new">List of Banks available</a>
+    <B>Online Payment <span style="display:none">( <B id = "amount5"></B> &nbsp;&nbsp;&nbsp;List of Banks available</a>
   </TD>
 </TR>
 
@@ -740,17 +740,17 @@
                  UPLOAD PHOTO
                 </TD>
                 <TD>
-                <input type="file" name="PIC_FILE_NAME" />
+                <input type="file" name="PHOTOFILE" />
                 </TD>
                 <TD>
-                <div id="PIC_FILE_NAME_MSG" > </div>
+                <div > </div>
                 </TD>
 
                 <TD align="left">
                  UPLOAD SIGNATURE
                 </TD>
                 <TD>
-                <input type="file" name="SIGN_FILE_NAME"   />
+                <input type="file" name="SIGNATUREFILE"   />
                 </TD>
     
                 <TD>
@@ -762,7 +762,7 @@
                  UPLOAD SIGNATURE
                 </TD>
                 <TD>
-                <input type="file"   name="DOC_FILE_NAME" />
+                <input type="file"   name="DOCUMENTFILE" />
                 </TD>
 
                 <TD>
