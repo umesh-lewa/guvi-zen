@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>PAN Card details page</head>
-<body bgcolor = "#FFFFF8">
+<body bgcolor = "#6f7aa6">
     <h1>Inside my PAN Card details page</h1>
 
 <!--
@@ -166,8 +166,8 @@
 <INPUT TYPE=checkbox NAME=BIRTH VALUE="Y" />
   </TD>
   <TD>
-    <B><FONT COLOR=RED>*</FONT>
-   5. Date of Birth/Incorporation/Agreement/Partnership<BR>
+    <B>*
+    5. Date of Birth/Incorporation/Agreement/Partnership<BR>
       or Trust Deed/Formation of Body of Individuals/<BR>
       Association of Persons
   </TD>
@@ -551,7 +551,7 @@
   <TD>&nbsp;</TD>
   <TD COLSPAN=3>Place
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <INPUT TYPE=text NAME=PAN_PLACE VALUE="" SIZE=30 MAXLENGTH=30>
+    <INPUT TYPE=text NAME=PANPLACE>
   </TD>
  </TR>
 
@@ -581,16 +581,16 @@
   <TD>&nbsp;</TD>
   <TD COLSPAN=2 VALIGN=TOP>I/We have enclosed
        &nbsp;&nbsp;&nbsp;&nbsp;
-       <SELECT NAME=PAN_PRF_IDNTY id="selectAccordingToCountryPOI" style = "white-space: nowrap" onChange="disabledpdetails();">
+       <SELECT NAME=PANIDENTITY>
        </SELECT>
        as proof of identity, 
-       <SELECT NAME=PAN_PRF_ADDR id="selectAccordingToCountryPOA"  style = "white-space: nowrap" onChange="disabledpdetails();">
+       <SELECT NAME=ADHARIDENTITY>
        </SELECT>
        as proof of address, 
-  <SELECT id="selectAccordingToCountryPOB"  NAME="PAN_PRF_DOB">
+  <SELECT id="selectAccordingToCountryPOB"  NAME="PANDOB">
   <OPTION VALUE="">--Please Select--</OPTION>
   </SELECT>
-        <span id ='dob_text'>as proof of date of birth and</span>    
+        <span id ='dobt'>as proof of date of birth and</span>    
 
        <SELECT NAME=PAN_PRF_PAN>
 
@@ -655,8 +655,8 @@
 <TR>
   <TD>&nbsp;</TD>
   <TD COLSPAN=2>
-    <B>DP ID: </B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DP_ID VALUE="" SIZE=10 MAXLENGTH=8>&nbsp;&nbsp;
-    <B>Client ID: </B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CLIENT_ID VALUE="" SIZE=10 MAXLENGTH=8>&nbsp;&nbsp;
+    <B>DP ID: </B>&nbsp;&nbsp;<INPUT TYPE=text NAME=DPID >&nbsp;&nbsp;
+    <B>Client ID: </B>&nbsp;&nbsp;<INPUT TYPE=text NAME=CPIENTID >&nbsp;&nbsp;
   </TD>
 </TR>
 <TR>
@@ -670,7 +670,7 @@
 </TR>
     
 <TR id="payModeDD">
-  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE id="PAYMODE_D" VALUE="D"  onClick="changeStatus('PAN_DD_', false);changeStatus('PAN_CHQ_', true)"></TD>
+  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="D"  ></TD>
   <TD COLSPAN=2>
     <B>Demand Draft number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_DD_NUM VALUE="" SIZE=14 MAXLENGTH=14 >&nbsp;&nbsp;
     <B>Dated </B>
@@ -692,7 +692,7 @@
 
    
 <TR id="payModeCHQ">
-  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE id="PAYMODE_C" VALUE="C"  onClick="changeStatus('PAN_DD_', true);changeStatus('PAN_CHQ_', false)"></TD>
+  <TD><INPUT TYPE=radio NAME=PAN_PAY_MODE id="PAYMODE_C" VALUE="C"  ></TD>
   <TD COLSPAN=2>
     <B>Cheque number</B>&nbsp;&nbsp;<INPUT TYPE=text NAME=PAN_CHQ_NUM VALUE="" SIZE=14 MAXLENGTH=14 >&nbsp;&nbsp;
     <B>Dated </B>
@@ -714,7 +714,7 @@
 </TR>
 <TR style="display:none">
   <TD>
-    <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="O"  onClick="changeStatus('PAN_DD_', true);changeStatus('PAN_CHQ_', true)">
+    <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="O" >
   </TD>
   <TD COLSPAN=2>
     <B>Credit Card / Debit Card ( <img height = 11 src = "/pan/images/rp.png" width = 10> <B id="amount4"></B>&nbsp;plus applicable bank charges )</B>
@@ -722,7 +722,7 @@
 </TR>
 <TR>
   <TD>
-    <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="B"  onClick="changeStatus('PAN_DD_', true);changeStatus('PAN_CHQ_', true)">
+    <INPUT TYPE=radio NAME=PAN_PAY_MODE VALUE="B"  >
   </TD>
   <TD COLSPAN=2>
     <B>Online Payment <span style="display:none">(<img height = 11 src = "/pan/images/rp.png" width = 10> <B id = "amount5"></B> &nbsp;&nbsp;&nbsp; <a href="/pan/Bank.html" target="_new">List of Banks available</a>
@@ -792,8 +792,8 @@
 
   <TR id="id9">
   <TD ALIGN=CENTER COLSPAN=2>
-<INPUT TYPE=button NAME=submit VALUE="Submit" id="submitButton" >
-<INPUT TYPE=submit name="submit" value="submitt" id="submittId" > </INPUT>
+<INPUT TYPE=button NAME=submit VALUE="Submit" >
+<INPUT TYPE=submit name="submit" value="submitt" > </INPUT>
 
 
   </TD>
