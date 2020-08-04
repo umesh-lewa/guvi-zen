@@ -33,11 +33,11 @@ var person1 = {
     gender:"M"
 }
 
-function joinFullName({firstName,lastName}) {
-    return firstName + '->' + lastName;
+function joinFirstLastName({firstName,lastName}) {
+    return firstName + '-' + lastName;
 }
   
-console.log(joinFullName(person1));
+console.log(joinFirstLastName(person1));
 
 var list = [ 1, 2, 3 ];
 var [ a, b ] = list;
