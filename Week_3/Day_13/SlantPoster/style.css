@@ -4,7 +4,7 @@
     background-color: rgba(15, 10, 21, 0.954);
     z-index: -1;
 }
-.top-div {
+.d1 {
     width: 100%;
     height: 500px;
     text-align: center;
@@ -17,7 +17,7 @@ h3{
     font-family: monospace;
 }
 
-.second-div {
+.d2 {
     width: 100%;
     height: 500px;
     background-image: url(./img/pexels-photo-355747.jpeg);
@@ -34,7 +34,7 @@ p {
     z-index: 1;
     color: black;
 }
-.third-div {
+.d3 {
     width: 100%;
     height: 500px;
     position: relative;
@@ -47,7 +47,7 @@ p {
     padding: 0;
     background-image: url(./img/140630-brown-abstract-curve-background-vector-image.jpg);
 }
-.fourth-div {
+.d4 {
     width: 100%;
     height: 500px;
     background-image: url(./img/106461-beige-abstract.jpg);
@@ -60,7 +60,7 @@ p {
     margin: 0;
     padding: 0;
 }
-.five-div {
+.d5 {
     width: 100%;
     height: 500px;
     background-image: url(./img/107257-pastel-pink-abstract.jpg);
@@ -73,7 +73,7 @@ p {
     margin: 0;
     padding: 0;
 }
-.six-div {
+.d6 {
     width: 100%;
     height: 500px;
     background-image: url(./img/1216364.jpg);
@@ -86,7 +86,7 @@ p {
     margin: 0;
     padding: 0;
 }
-.seven-div {
+.d7 {
     width: 100%;
     height: 500px;
     background-image: url(./img/sandro-katalina-k1bO_VTiZSs-unsplash.jpg);
