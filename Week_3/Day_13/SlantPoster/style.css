@@ -1,4 +1,4 @@
-.outermost-div {
+.base-div {
     width: 100%;
     height: 100%;
     background-color: rgba(15, 10, 21, 0.954);
@@ -21,10 +21,11 @@ h3{
     width: 100%;
     height: 500px;
     background-image: url(./img/pexels-photo-355747.jpeg);
+    text-align: center;
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
@@ -40,7 +41,7 @@ p {
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
@@ -54,7 +55,7 @@ p {
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
@@ -67,7 +68,7 @@ p {
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
@@ -80,7 +81,7 @@ p {
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
@@ -93,14 +94,14 @@ p {
     position: relative;
     top: 0;
     right: 0;
-    transform: skewY(-5deg);
+    transform: skewY(-4deg);
     transform-origin: top right;
     z-index: 0;
     margin: 0;
     padding: 0;
 }
 .content {
-    transform: skewY(5deg);
+    transform: skewY(4deg);
     position: absolute;
     top: 150px;
     font-family:Helvetica;
@@ -112,7 +113,7 @@ p {
     margin: auto;
 }
 .second-header {
-    transform: skewY(5deg);
+    transform: skewY(4deg);
     position: absolute;
     margin-top: 105px;
     font-family: Helvetica;
