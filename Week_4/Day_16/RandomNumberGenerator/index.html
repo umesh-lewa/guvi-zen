@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+	<style type="text/css">
+		.button {
+		  background-color: #008CBA;
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  margin-left: 400px;
+		  margin-top: 200px;
+		  border-radius: 12px;
+		}
+
+		 *{box-sizing:border-box;font: bold 14px Arial, sans-serif;}
+
+		p{
+		  font-size: 45px;
+		  margin: 4px 2px;
+		  margin-left: 400px;
+		  margin-top: 100px;
+		}
+	</style>
+</head>
+<body style="background-color: ivory">
+
+	<script src="CreateButton.js"></script>	
+
+	<script type="text/javascript">
+		function getRandomInt(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+		}
+
+		function checkIfUnique(num){
+
+			var numArr = num.toString().split("");
+			var numSet = new Set(numArr);
+
+			if(numArr.length == numSet.size){
+				return true;
+			}else{
+				return false;
+			}
+
+		}
+
+		function get8DigitUniqueRandomNumber() {
+
+			var num = getRandomInt(10000000,99999999);
+
+			var p = document.getElementById("myParaText"); 
+
+			if(checkIfUnique(num)){
+				console.log(num);
+				p.innerHTML = num;
+			}else{
+				get8DigitUniqueRandomNumber();
+			}
+
+		}
+
+		//get8DigitUniqueRandomNumber();
+	</script>
+
+</body>
+</html>
