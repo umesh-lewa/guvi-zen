@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Data and Insert into Table</title>
+	<style type="text/css">
+
+		h3{
+		  font-family: Arial, Helvetica, sans-serif;
+
+		}
+
+		.button3 {
+		  background-color: white; 
+		  color: black; 
+		  border: 2px solid #f44336;
+		  border-radius: 12px;
+		}
+
+		.button3:hover {
+		  background-color: #f44336;
+		  color: white;
+		}
+
+		table{
+			font-family: Arial, Helvetica, sans-serif;
+			/*border-spacing: 15px;*/
+		}
+
+		input{
+			border-radius: 12px;
+		}
+		
+	</style>
+
+</head>
+<body style="background-color: ivory">
+
+	<script type="text/javascript" src="CreateFormAndTable.js"></script>
+
+	<script type="text/javascript">
+		function addDataToTable(){
+
+			  var formData = document.getElementById("myForm");
+			  //var txt = "";
+			  var currentFirstName = formData.elements[0].value;
+			  var currentLastName = formData.elements[1].value;
+			  var currentAddress = formData.elements[2].value;
+			  var currentPincode = formData.elements[3].value;
+			  var currentGender = formData.elements[4].value;
+			  var currentChoiceOfFood1 = formData.elements[5].value;
+			  var currentChoiceOfFood2 = formData.elements[6].value;
+			  var currentState = formData.elements[7].value;
+			  var currentCountry = formData.elements[8].value;
+
+			  //var table2old = document.getElementById('myTable2');
+			  //var table2 = table2old.cloneNode(true);
+			  //appendDataToElement(clone, data);
+			  
+
+			  var table2 = document.getElementById("myTable2");
+
+			  			  
+			  var tr = document.createElement("tr");
+			  var td1 = document.createElement("td");
+			  td1.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0" +currentFirstName));
+			  var td2 = document.createElement("td");
+			  td2.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentLastName));
+			  var td3 = document.createElement("td");
+			  td3.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentAddress));
+			  var td4 = document.createElement("td");
+			  td4.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentPincode));
+			  var td5 = document.createElement("td");
+			  td5.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentGender));
+			  var td6 = document.createElement("td");
+			  td6.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentChoiceOfFood1+","+currentChoiceOfFood2));
+			  var td7 = document.createElement("td");
+			  td7.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentState));
+			  var td8 = document.createElement("td");
+			  td8.appendChild(document.createTextNode("\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+currentCountry));
+
+			  tr.appendChild(td1);
+			  tr.appendChild(td2);
+			  tr.appendChild(td3);
+			  tr.appendChild(td4);
+			  tr.appendChild(td5);
+			  tr.appendChild(td6);
+			  tr.appendChild(td7);
+			  tr.appendChild(td8);
+				
+			  table2.appendChild(tr);
+			  
+			  
+
+			  /*  
+			  var newRow = document.getElementById('myTable2').insertRow();
+			  var newCell1 = newRow.insertCell(0);
+			  newCell1.innerHTML = currentFirstName;
+			  //newCell1.appendChild(document.createTextNode(currentFirstName));
+			  var newCell2 = newRow.insertCell(1);
+			  newCell2.innerHTML = currentLastName;
+			  //newCell2.appendChild(document.createTextNode(currentFirstName));
+			  var newCell3 = newRow.insertCell(2);
+			  newCell3.innerHTML = currentAddress;
+			  //newCell3.appendChild(document.createTextNode(currentFirstName));
+			  var newCell4 = newRow.insertCell(3);
+			  newCell4.innerHTML = currentPincode;
+			  //newCell4.appendChild(document.createTextNode(currentFirstName));
+			  var newCell5 = newRow.insertCell(4);
+			  newCell5.innerHTML = currentGender;
+			  //newCell5.appendChild(document.createTextNode(currentFirstName));
+			  var newCell6 = newRow.insertCell(5);
+			  newCell6.innerHTML = currentChoiceOfFood1 + "," + currentChoiceOfFood2;
+			  //newCell6.appendChild(document.createTextNode(currentFirstName));
+			  var newCell7 = newRow.insertCell(6);
+			  newCell7.innerHTML = currentState;
+			  //newCell7.appendChild(document.createTextNode(currentFirstName));
+			  var newCell8 = newRow.insertCell(7);
+			  newCell8.innerHTML = currentCountry;
+			  //newCell8.appendChild(document.createTextNode(currentFirstName));
+			  */
+
+			  
+
+			  //table2old.parentNode.replaceChild(table2, table2old);
+			  
+			  		  
+			  alert("Your data has been added to the table ...!");
+		}
+	</script>
+
+</body>
+</html>
