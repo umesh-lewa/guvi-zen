@@ -38,17 +38,6 @@ request({url: "https://raw.githubusercontent.com/rvsp/restcountries-json-data/ma
         var cardColumnsDiv = document.createElement("div");
         cardColumnsDiv.setAttribute("class","card-columns");
 
-        /*
-        <div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="..." alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Card title</h5>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
-		  </div>
-		</div>
-		*/
-
 		// get each country from list of countries in the reponse object
         countries.forEach(country => {
 
@@ -119,47 +108,3 @@ request({url: "https://raw.githubusercontent.com/rvsp/restcountries-json-data/ma
         // print error in console for debugging
         console.log("Error in executing the request :" + error);
     });
-
-/*
-function useFetch(){
-
-fetch("https://restcountries.eu/rest/v2/all").then(function(data){
-	return data.json();
-})
-.then(function(data1){
-
-	var p = document.getElementById("myPara");
-	var ul = document.getElementById("myLi");
-
-	for(let i = 0 ; i < data1.length ; i++){
-		//p.innerHTML =  JSON.stringify(data1[i].name);
-		var li = document.createElement("li");
-		li.appendChild(document.createTextNode(data1[i].name));
-		//p.innerHTML += data1[i].name;
-		//p.innerHTML += data1[i].flag;
-		var im = document.createElement("img");
-		im.setAttribute("src",data1[i].flag);
-		li.appendChild(im);
-		ul.appendChild(li);
-	}
-
-	for (var property in data1) {
-  		if (data1.hasOwnProperty(property)) {
-    		//p.innerHTML = property+ " " + data1.property;
-  		}
-	}
-
-	//p.innerHTML = data1;
-	
-	console.log(typeof(data1));
-	
-	console.log(data1);
-})
-.catch(function(e){
-	console.log(e);
-});
-
-}
-
-useFetch();
-*/
