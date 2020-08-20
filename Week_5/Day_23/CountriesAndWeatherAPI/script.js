@@ -1,9 +1,47 @@
+// function to hit the dynamically created weather api endpoint for each specific country
+        async function getWeatherDetailsByCountry(url){
 
+                try{
+
+                let response = await fetch(url);
+                let data = await response.json();
+    
+                // build the output string to dsiplay to user
+                let outString = ""; 
+                
+                // extract the required values from parsed response and add to output string
+                outString += "Weather Desctiption : " + data.weather[0].description + "\n";
+                outString += "Temp : " + data.main.temp + "\n";
+
+                outString += "Min Temp : " + data.main.temp_min + "\n";
+
+                outString += "Max Temp : " + data.main.temp_max + "\n";
+
+                outString += "Pressure : " + data.main.pressure + "\n";
+
+                outString += "Humidity : " + data.main.humidity + "\n";
+
+                outString += "Visibility : " + data.visibility + "\n";
+
+                outString += "Wind Speed : " + data.wind.speed + "\n";
+
+                outString += "Wind Deg : " + data.wind.deg + "\n";
+                
+                // display the response data in alert box
+                alert(outString);
+
+                } catch(err) {
+                    // show caught error in alert box for debugging purpose
+                    alert(err); 
+                    console.log(err);
+                }
+            }
+            
 // declare async function
 async function myAsyncFunction(){
 
     try{
-    // use await keyboard while hitting the endpoint
+    // use await keyboard while hitting the countries endpoint
 	let response = await fetch("https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
     
     // use await keyboard while parsing the response
@@ -24,9 +62,9 @@ async function myAsyncFunction(){
         // iterate through the list of countries
         countries.forEach(country => {
 
-            let outerDiv = document.createElement("div")
-            outerDiv.setAttribute("style","display:flex;justify-content:center;padding:5px;")
-            outerDiv.setAttribute("class","col-lg-4 col-sm-12")
+            let outerCardDiv = document.createElement("div")
+            outerCardDiv.setAttribute("style","display:flex;justify-content:center;padding:5px;")
+            outerCardDiv.setAttribute("class","col-lg-4 col-sm-12")
 
         	// create outer card div
             var cardDiv = document.createElement("div");
@@ -59,14 +97,18 @@ async function myAsyncFunction(){
             */
 
             // create card content tags
+
+            //get country capital
             var p1 = document.createElement("p");
             p1.setAttribute("class","card-text");
             p1.innerHTML = "Capital : " + country.capital;
 
+            // get country region
             var p2 = document.createElement("p");
             p2.setAttribute("class","card-text");
             p2.innerHTML = "Region : " + country.region;
 
+            // get country code
             var p3 = document.createElement("p");
             p3.setAttribute("class","card-text");
             p3.innerHTML = "Country Code : " + country.alpha2Code;
@@ -101,9 +143,9 @@ async function myAsyncFunction(){
         	// add each card div to the card column group
             //cardColumnsDiv.appendChild(cardDiv);
 
-            outerDiv.appendChild(cardDiv);
+            outerCardDiv.appendChild(cardDiv);
 
-            baseDiv.appendChild(outerDiv);
+            baseDiv.appendChild(outerCardDiv);
 
         });
         // add the card group to the base div
