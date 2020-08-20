@@ -25,48 +25,7 @@
 </head>
 <body style="background-color: #525369;">
 
-	<script type="text/javascript">
-		// function to hit the dynamically created weather api endpoint for each specific country
-		async function getWeatherDetailsByCountry(url){
-
-				try{
-
-            	let response = await fetch(url);
-    			let data = await response.json();
-	
-				// build the output string to dsiplay to user
-    			let outString = ""; 
-    			
-    			// extract the required values from parsed response and add to output string
-    		    outString += "Weather Desctiption : " + data.weather[0].description + "\n";
-    		    outString += "Temp : " + data.main.temp + "\n";
-
-    		    outString += "Min Temp : " + data.main.temp_min + "\n";
-
-    		    outString += "Max Temp : " + data.main.temp_max + "\n";
-
-    		    outString += "Pressure : " + data.main.pressure + "\n";
-
-    		    outString += "Humidity : " + data.main.humidity + "\n";
-
-    		    outString += "Visibility : " + data.visibility + "\n";
-
-    		    outString += "Wind Speed : " + data.wind.speed + "\n";
-
-    		    outString += "Wind Deg : " + data.wind.deg + "\n";
-    			
-				// display the response data in alert box
-    			alert(outString);
-
-    			} catch(err) {
-    				// show caught error in alert box for debugging purpose
-   					alert(err); 
-                    console.log(err);
-  				}
-            }
-
-	</script>
-
+    <!-- call script js to create DOM and execute buissness logic-->
 	<script type="text/javascript" src="script.js"></script>
 
 </body>
