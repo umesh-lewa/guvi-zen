@@ -4,7 +4,7 @@ baseDiv.setAttribute("class","container");
 
 var h31 = document.createElement("h2");
 h31.setAttribute("class","display-4");
-h31.innerHTML = "Hello From Inside the dynamically generated JS file with the TS command npx tsc !";
+h31.innerHTML = "Hello From Inside the dynamically generated JS file with the TS command , npx tsc script.js !";
 
 
 
@@ -70,7 +70,7 @@ th1.innerHTML = "#";
 
 var th2 = document.createElement("th");
 th2.setAttribute("scope","col");
-th2.innerHTML = "ES6";
+th2.innerHTML = "ES6 Implementation";
 
 var th3 = document.createElement("th");
 th3.setAttribute("scope","col");
@@ -89,7 +89,7 @@ tr1th.setAttribute("scope","row");
 tr1th.innerHTML = "1 chunk()";
 
 var td11 = document.createElement("td");
-td11.innerHTML = "const chunk = (arr, chunkSize = 1, cache = []) => { \nconst tmp = [...arr]\nif (chunkSize <= 0) return cache\nwhile (tmp.length) cache.push(tmp.splice(0, chunkSize))\nreturn cache}";
+td11.innerHTML = "var chunkOutput = chunk(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 3); \n const chunk = (arr, chunkSize = 1, cache = []) => { \nconst tmp = [...arr]\nif (chunkSize <= 0) return cache\nwhile (tmp.length) cache.push(tmp.splice(0, chunkSize))\nreturn cache}";
 var td12 = document.createElement("td");
 td12.innerHTML = chunkOutput.toString();
 
@@ -124,7 +124,7 @@ tr3th.setAttribute("scope","row");
 tr3th.innerHTML = "3 filter()";
 
 var td31 = document.createElement("td");
-td31.innerHTML = "let filterOutput = numbers.filter(num => num % 3 === 0);"
+td31.innerHTML = "const numbers = [10, 40, 230, 15, 18, 51, 1221] \nlet filterOutput = numbers.filter(num => num % 3 === 0);"
 
 var td32 = document.createElement("td");
 td32.innerHTML = filterOutput.toString();
@@ -142,7 +142,7 @@ tr4th.setAttribute("scope","row");
 tr4th.innerHTML = "4 find()";
 
 var td41 = document.createElement("td");
-td41.innerHTML = "1st value of let findOutput = array1.filter(element => element > 10); "
+td41.innerHTML = "let array1 = [5, 12, 8, 130, 44]; \n 1st value of , let findOutput = array1.filter(element => element > 10); "
 
 var td42 = document.createElement("td");
 td42.innerHTML = findOutput.toString();
