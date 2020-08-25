@@ -49,31 +49,47 @@ async function myAsyncFunction(){
         
         let countries = data;
 
+        var containerDiv = document.createElement("div");
+        containerDiv.setAttribute("class","container");
+
         var baseDiv = document.createElement("div");
         baseDiv.setAttribute("style","margin-left: 70px; margin-top: 90px;");
         baseDiv.setAttribute("class","card-group");
 
-        document.body.append(baseDiv);
+        document.body.append(containerDiv);
 
         var cardColumnsDiv = document.createElement("div");
         cardColumnsDiv.setAttribute("class","card-columns");
         cardColumnsDiv.setAttribute("style","margin-top : 100px;");
 
         // iterate through the list of countries
-        countries.forEach(country => {
 
-            let outerCardDiv = document.createElement("div")
-            outerCardDiv.setAttribute("style","display:flex;justify-content:center;padding:5px;")
-            outerCardDiv.setAttribute("class","col-lg-4 col-sm-12")
+        var initialPos = 0;
+        var finalPos = 0;
 
-        	// create outer card div
+        var rowDiv = document.createElement("div");
+        rowDiv.setAttribute("class","row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5");
+        // row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5
+        for(let i = 0 ; i < countries.length ; i++){
+
+            var colDiv = document.createElement("div");
+            colDiv.setAttribute("class","col mb-4");
+            //colDiv.setAttribute("style","max-width : 33%;");
+
+            var country = countries[i];
+
+            //let outerCardDiv = document.createElement("div")
+            //outerCardDiv.setAttribute("style","display:flex;justify-content:center;padding:5px;")
+            //outerCardDiv.setAttribute("class","col-lg-4 col-sm-12")
+
+            // create outer card div
             var cardDiv = document.createElement("div");
             cardDiv.setAttribute("class","card text-center text-white");
-            cardDiv.setAttribute("style","width: 18rem;font-family: Arial, Helvetica, sans-serif;");
+            cardDiv.setAttribute("style","font-family: Arial, Helvetica, sans-serif;");
 
             // create image for the card i.e flag
             var cardImgDiv = document.createElement("img");
-            cardImgDiv.setAttribute("class","card-img-top");
+            cardImgDiv.setAttribute("class","card-img-top img-fluid");
             cardImgDiv.setAttribute("src",country.flag);
             cardImgDiv.setAttribute("alt","Card  image cap");
 
@@ -116,7 +132,13 @@ async function myAsyncFunction(){
             // build the weather api url from the data got from rest countries
             var countryCode = country.alpha2Code;
             var cityCode = country.capital;
-            var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityCode+","+countryCode+"&appid=f21dc7c3c2e1aeb45da297ca74d853ce";
+
+            if(cityCode.includes() || cityCode.includes()){
+                var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityCode+","+countryCode+"&appid=f21dc7c3c2e1aeb45da297ca74d853ce";
+            }else{
+                var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+country.name+"&appid=f21dc7c3c2e1aeb45da297ca74d853ce";
+            }
+            
             var finalWeatherURL = weatherURL;
 
             // create transparent button with light border 
@@ -127,27 +149,39 @@ async function myAsyncFunction(){
 
             // add content to the card content div
 
-        	//cardContentDiv.appendChild(h5title);
+            //cardContentDiv.appendChild(h5title);
             cardContentDiv.appendChild(cardImgDiv);
-        	cardContentDiv.appendChild(p1);
-        	cardContentDiv.appendChild(p2);
-        	cardContentDiv.appendChild(p3);
+            cardContentDiv.appendChild(p1);
+            cardContentDiv.appendChild(p2);
+            cardContentDiv.appendChild(p3);
             cardContentDiv.appendChild(a1);
 
-        	// add image ond content to each card div
+            // add image ond content to each card div
 
             cardDiv.appendChild(headerDiv);
-        	//cardDiv.appendChild(cardImgDiv);
-        	cardDiv.appendChild(cardContentDiv);
+            //cardDiv.appendChild(cardImgDiv);
+            cardDiv.appendChild(cardContentDiv);
 
-        	// add each card div to the card column group
+            // add each card div to the card column group
             //cardColumnsDiv.appendChild(cardDiv);
 
-            outerCardDiv.appendChild(cardDiv);
+            //outerCardDiv.appendChild(cardDiv);
 
-            baseDiv.appendChild(outerCardDiv);
+            colDiv.appendChild(cardDiv);
+
+            rowDiv.appendChild(colDiv);
+
+            //baseDiv.appendChild(outerCardDiv);
+
+        }
+
+        containerDiv.appendChild(rowDiv);
+
+
+        countries.forEach(country => {   
 
         });
+
         // add the card group to the base div
         //baseDiv.appendChild(cardColumnsDiv);
 
