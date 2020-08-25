@@ -9,7 +9,7 @@ h31.innerHTML = "Hello From Inside the dynamically generated JS file with the TS
 
 
 
-// chunk
+// --------------------------------> chunk
 
 const chunk = (arr, chunkSize = 1, cache = []) => {
   const tmp = [...arr]
@@ -26,39 +26,90 @@ console.log(chunkOutput)
 // => [['a', 'b', 'c'], ['d', 'e', 'f'], ['g']]
 
 
-// reduce
+// --------------------------------> reduce
 
-let reduceOuput = [1, 2, 3].reduce((total, n) => total + n);
-console.log(reduceOuput);
+//let reduceOuput = [1, 2, 3].reduce((total, n) => total + n);
+
+// reducer takes an array, reducer() and initialValue as argument
+function reduce(arr, reducer) {    
+let accumulator = 0;
+    for(let i=0 ; i < arr.length ; i++)        
+    	accumulator = reducer(accumulator, arr[i]);    
+    return accumulator;
+}
+
+let reduceOuput = reduce([1, 2, 3,4], (total, n) => total + n);
+
+console.log("reduceOuput : "+reduceOuput);
 
 
-// filer
+// --------------------------------> filer
 
 const numbers = [10, 40, 230, 15, 18, 51, 1221]       
 
-let filterOutput = numbers.filter(num => num % 3 === 0);
-console.log(filterOutput);
+function myFilterFunc(arr, filterFunc) {    
+const filterArr = [];
+for(let i = 0; i < arr.length ; i++) {        
+	const result = filterFunc(arr[i]);               
+	if(result)             
+		filterArr.push(arr[i]);     
+}    
+return filterArr;
+}
+
+let filterOutput = myFilterFunc(numbers, num => num % 3 === 0);
+
+//let filterOutput = numbers.filter(num => num % 3 === 0);
+
+console.log("filterOutput : "+filterOutput);
 
 
-// find 
+// --------------------------------> find 
 
 let array1 = [5, 12, 8, 130, 44];
 
 //let findOutput = array1.find(element => element > 10);
-let findOutput = array1.filter(element => element > 10);
+//let findOutput = array1.filter(element => element > 10);
+
+function myFindFunc(arr, filterFunc) {    
+const filterArr = [];
+for(let i = 0; i < arr.length ; i++) {        
+	const result = filterFunc(arr[i]);               
+	if(result)             
+		filterArr.push(arr[i]);
+		     
+}
+return filterArr[0];    
+}
+
+let findOutput = myFindFunc(array1, element => element > 10);
 
 //console.log(findOutput);
-console.log(findOutput[0]);
+//console.log(findOutput[0]);
+console.log("findOutput : "+findOutput);
 
+// --------------------------------> sum
 
-// sum
-
+/*
 let sumOutput = [4, 2, 8, 6].reduce((acc, num) => {
   acc += num
   return acc
 }, 0)
+*/
+
+let getSum = (arr) =>{
+  let totalSum = 0;
+  for(let i = 0 ; i < arr.length ; i++){
+    totalSum += arr[i];
+  }
+  return totalSum;
+}
+
+let sumOutput = getSum([4, 2, 8, 6]);
+
 console.log(sumOutput);
 
+//  add  calcculated values to dom
 var table1 = document.createElement("table");
 table1.setAttribute("class","table table-dark");
 
@@ -106,7 +157,7 @@ tr2th.setAttribute("scope","row");
 tr2th.innerHTML = "2 reduce()";
 
 var td21 = document.createElement("td");
-td21.innerHTML = "let reduceOuput = [1, 2, 3].reduce((total, n) => total + n);"
+td21.innerHTML = "function reduce(arr, reducer) {    let accumulator = 0;for(let i=0 ; i < arr.length ; i++)        accumulator = reducer(accumulator, arr[i]);    return accumulator;}"
 
 var td22 = document.createElement("td");
 td22.innerHTML = reduceOuput.toString();
@@ -124,7 +175,7 @@ tr3th.setAttribute("scope","row");
 tr3th.innerHTML = "3 filter()";
 
 var td31 = document.createElement("td");
-td31.innerHTML = "const numbers = [10, 40, 230, 15, 18, 51, 1221] \nlet filterOutput = numbers.filter(num => num % 3 === 0);"
+td31.innerHTML = "function myFilterFunc(arr, filterFunc) {    const filterArr = [];for(let i = 0; i < arr.length ; i++) {        const result = filterFunc(arr[i]);               if(result)             filterArr.push(arr[i]);     }    return filterArr;}"
 
 var td32 = document.createElement("td");
 td32.innerHTML = filterOutput.toString();
@@ -142,7 +193,7 @@ tr4th.setAttribute("scope","row");
 tr4th.innerHTML = "4 find()";
 
 var td41 = document.createElement("td");
-td41.innerHTML = "let array1 = [5, 12, 8, 130, 44]; \n 1st value of , let findOutput = array1.filter(element => element > 10); "
+td41.innerHTML = "function myFindFunc(arr, filterFunc) {    const filterArr = []; for(let i = 0; i < arr.length ; i++) {        const result = filterFunc(arr[i]);               if(result)             filterArr.push(arr[i]);		     }return filterArr[0];    }"
 
 var td42 = document.createElement("td");
 td42.innerHTML = findOutput.toString();
@@ -160,7 +211,7 @@ tr5th.setAttribute("scope","row");
 tr5th.innerHTML = "5 sum()";
 
 var td51 = document.createElement("td");
-td51.innerHTML = "let sumOutput = [4, 2, 8, 6].reduce((acc, num) => {acc += num return acc }, 0)";
+td51.innerHTML = "let getSum = (arr) =>{ let totalSum = 0; for(let i = 0 ; i < arr.length ; i++){totalSum += arr[i];}return totalSum;}";
 
 var td52 = document.createElement("td");
 td52.innerHTML = sumOutput.toString();
