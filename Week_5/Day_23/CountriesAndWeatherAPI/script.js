@@ -133,7 +133,7 @@ async function myAsyncFunction(){
             var countryCode = country.alpha2Code;
             var cityCode = country.capital;
 
-            if(cityCode.includes() || cityCode.includes()){
+            if(cityCode.indexOf("'") == -1){
                 var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityCode+","+countryCode+"&appid=f21dc7c3c2e1aeb45da297ca74d853ce";
             }else{
                 var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q="+country.name+"&appid=f21dc7c3c2e1aeb45da297ca74d853ce";
