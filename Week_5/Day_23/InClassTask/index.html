@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<style type="text/css">
+
+		/*  CSS styling for the grouping of the cards */
+		.card-columns {
+		  @include media-breakpoint-only(lg) {
+		    column-count: 4;
+		  }
+		  @include media-breakpoint-only(xl) {
+		    column-count: 7;
+		  }
+		}
+
+	</style>
+</head>
+<body style="background-color: #76c8ff;">
+
+	<script type="text/javascript">
+
+		async function getDetailsByCountry(url){
+            	let response = await fetch(url);
+    			let data = await response.json();
+
+    			let outString = ""; 
+    			data.forEach(day =>{
+    				outString += "Cases : " + day.Cases + "\n";
+    			});
+
+    			alert(outString);
+    			//console.log(data);
+            }
+
+	</script>
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
