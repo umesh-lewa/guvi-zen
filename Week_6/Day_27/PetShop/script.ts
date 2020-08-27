@@ -81,7 +81,7 @@ class PetRequest extends PetAvailability{
 		//console.log(this.availablePets.length);
 		//console.log(this.availablePets);
 		console.log(this.availPets.length);
-		console.log(this.availPets);
+		//console.log(this.availPets);
 		for(let i = 0  ; i  < 5 ; i ++){				
 				this.element = this.totalRequestedPets[i];
 				//this.availPets = this.getAvailablePets;
@@ -89,9 +89,9 @@ class PetRequest extends PetAvailability{
 				console.log("iterating through requsted pets");			
 				//console.log(this.availPets.length);
 
-				for(let j = 0 ; j < this.availablePets.length ; j++) {
+				for(let j = 0 ; j < this.availPets.length ; j++) {
 					console.log("iterating through each evailable pet");
-					if(this.availablePets[j].name == this.element.name){
+					if(this.availPets[j].name == this.element.name){
 						this.tempPet = this.element;
 						console.log("This pet is there in shop");
 						if(this.tempPet.currentStatus){
@@ -109,8 +109,8 @@ class PetRequest extends PetAvailability{
 
 	mapRequestData(){
 		this.totalRequestedPets.forEach(element => {
-				for(let j = 0 ; j < this.availablePets.length ; j++) {
-					if(this.availablePets[j].name == this.element.name){
+				for(let j = 0 ; j < this.availPets.length ; j++) {
+					if(this.availPets[j].name == this.element.name){
 						this.tempPet = this.element;
 						this.totalMatchedPets++;
 						if(this.tempPet.currentStatus){
@@ -148,6 +148,8 @@ avail.insertPets();
 avail.getCountOfDifferentPets();
 
 let request = new PetRequest();
+
+request.availPets = avail.availablePets;
 
 let insertPetRequests: Pet [] = [];
 
