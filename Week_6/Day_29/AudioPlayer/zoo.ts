@@ -210,7 +210,7 @@ class AudioPlaylist {
 
 }
 
-
+/*
 class AudioCard{
     title:string;
     image:string;
@@ -220,7 +220,7 @@ class AudioCard{
 
     }
 }
-
+*/
 
 let playList = new AudioPlaylist();
 playList.getSearchTacks("linkinpark");
