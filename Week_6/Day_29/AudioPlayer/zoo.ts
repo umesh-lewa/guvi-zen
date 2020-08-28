@@ -125,19 +125,23 @@ async function getSongsFromRapidAPIShazamAndCreateCards(type: string) {
 
                 console.log("iterating  each track");
                 let cardOuterContainer = document.createElement("div");
-                cardOuterContainer.setAttribute("class", "margin-top:30px;width:100%;");
+                cardOuterContainer.setAttribute("class","container");
+                cardOuterContainer.setAttribute("style", "margin-top:30px;width:100%;");
 
                 let cardOuterRow = document.createElement("div");
                 cardOuterRow.setAttribute("class", "row");
 
                 let cardDiv = document.createElement("div");
-                cardDiv.setAttribute("class", "card border-dark");
+                cardDiv.setAttribute("class", "card");
+                cardDiv.setAttribute("style","width:100%");
 
                 let cardBodyDiv = document.createElement("div");
-                cardBodyDiv.setAttribute("class", "card-body");
+                cardBodyDiv.setAttribute("class", "row card-body");
 
                 let trackImg = document.createElement("img");
-                trackImg.setAttribute("class", "card-img-top");
+                trackImg.setAttribute("class","img-thumbnail");
+                trackImg.setAttribute("style","width:350px;height:250px;");
+                //trackImg.setAttribute("class", "card-img-top");
                 trackImg.setAttribute("src", track.images.coverart);
 
                 let trackTitle = document.createElement("h5");
@@ -152,10 +156,20 @@ async function getSongsFromRapidAPIShazamAndCreateCards(type: string) {
 
                 trackAudio.appendChild(trackAudioSource);
 
-                cardBodyDiv.appendChild(trackTitle);
-                cardBodyDiv.appendChild(trackAudio);
+                let col8CardBodyDiv = document.createElement("div");
+                col8CardBodyDiv.setAttribute("class","col-md-8");
+                col8CardBodyDiv.appendChild(trackTitle);
+                col8CardBodyDiv.appendChild(trackAudio);
 
-                cardDiv.appendChild(trackImg);
+                let col4CardBodyDiv = document.createElement("div");
+                col4CardBodyDiv.setAttribute("class","col-md-4");
+                col4CardBodyDiv.setAttribute("style","text-align:right");
+                col4CardBodyDiv.appendChild(trackImg);
+
+                cardBodyDiv.appendChild(col8CardBodyDiv);
+                cardBodyDiv.appendChild(col4CardBodyDiv);
+
+                //cardDiv.appendChild(trackImg);
                 cardDiv.appendChild(cardBodyDiv);
 
                 cardOuterRow.appendChild(cardDiv);
