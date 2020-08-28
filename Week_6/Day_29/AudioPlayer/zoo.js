@@ -148,7 +148,7 @@ function getSongsFromRapidAPIShazamAndCreateCards(type) {
                     var cardOuterRow = document.createElement("div");
                     cardOuterRow.setAttribute("class", "row");
                     var cardDiv = document.createElement("div");
-                    cardDiv.setAttribute("class", "card");
+                    cardDiv.setAttribute("class", "card border-dark");
                     var cardBodyDiv = document.createElement("div");
                     cardBodyDiv.setAttribute("class", "card-body");
                     var trackImg = document.createElement("img");
@@ -179,10 +179,25 @@ function getSongsFromRapidAPIShazamAndCreateCards(type) {
         });
     });
 }
-var AudioPlayer = /** @class */ (function () {
-    function AudioPlayer() {
+var AudioPlaylist = /** @class */ (function () {
+    function AudioPlaylist() {
     }
-    AudioPlayer.prototype.getTracks = function () {
+    AudioPlaylist.prototype.getTopTracks = function () {
+        getSongsFromRapidAPIShazamAndCreateCards("list-artist-top-tracks");
     };
-    return AudioPlayer;
+    AudioPlaylist.prototype.getRecommendedSongs = function () {
+        getSongsFromRapidAPIShazamAndCreateCards("list-recommendations");
+    };
+    AudioPlaylist.prototype.getSearchTacks = function (searchTerm) {
+        getSongsFromRapidAPIShazamAndCreateCards("search" + "," + searchTerm);
+    };
+    return AudioPlaylist;
 }());
+var AudioCard = /** @class */ (function () {
+    function AudioCard() {
+    }
+    return AudioCard;
+}());
+var playList = new AudioPlaylist();
+playList.getSearchTacks("linkinpark");
+var card = new AudioCard();

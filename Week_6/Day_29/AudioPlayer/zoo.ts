@@ -176,10 +176,37 @@ async function getSongsFromRapidAPIShazamAndCreateCards(type: string) {
 
 }
 
-class AudioPlayer {
+class AudioPlaylist {
 
-    getTracks() {
+    constructor(){
 
     }
 
+    getTopTracks() {
+        getSongsFromRapidAPIShazamAndCreateCards("list-artist-top-tracks");
+    }
+
+    getRecommendedSongs(){
+        getSongsFromRapidAPIShazamAndCreateCards("list-recommendations");
+    }
+
+    getSearchTacks(searchTerm:string){
+        getSongsFromRapidAPIShazamAndCreateCards("search"+","+searchTerm);       
+    }
+
 }
+
+
+class AudioCard{
+    title:string;
+    image:string;
+    audio:string;
+
+    constructor(){
+
+    }
+}
+
+
+let playList = new AudioPlaylist();
+playList.getSearchTacks("linkinpark");
