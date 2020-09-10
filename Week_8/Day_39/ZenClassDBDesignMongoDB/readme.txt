@@ -1,4 +1,4 @@
-
+Collection Relationships
 
 One Student -> Can have multiple courses
 One Course -> Can be taken by many students

@@ -19,7 +19,7 @@ db.students.insert({
 	"companyDrives":[ ObjectId("5f5a4e0b987ec8b8c6d8feee"),  ObjectId("5f5a4e0b987ec8b8c6d8feee")]
 })
 
-// create montors collection
+// create mentors collection
 
 db.createCollection("mentors")
 db.mentors.insert({
