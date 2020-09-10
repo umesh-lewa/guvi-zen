@@ -1,0 +1,79 @@
+
+// create zen daqtabase
+
+use zen
+
+// create students collection
+
+db.createCollection("students")
+db.students.insert({
+	"name" : "Umesh",
+	"email":"umesh.lewa@yahoo.com",
+	"mobile":"9500130553",
+	"dob":"14-02-1997",
+	"occupation":"Engineer",
+	"courses":[ ObjectId("5f5a52e3cab9212a61b785ff")],
+	"dailyTasks":[ ObjectId("5f5a4f84987ec8b8c6d8fef1")],
+	"attendance":[ ObjectId("5f5a4fb8987ec8b8c6d8fef2")],
+	"codeKataQuestions":[ ObjectId("5f5a4e0b987ec8b8c6d8feee")],
+	"companyDrives":[ ObjectId("5f5a4e0b987ec8b8c6d8feee"),  ObjectId("5f5a4e0b987ec8b8c6d8feee")]
+})
+
+// create montors collection
+
+db.createCollection("mentors")
+db.mentors.insert({
+	"mentorName":"Banu Prakash",
+	"mentorEmail":"banu.prakash@gmail.com",
+	"studentCountForMentors":"5",
+	"students":[ ObjectId("5f5a5373cab9212a61b78600"), ObjectId("5f5a5373cab9212a61b78601")]	
+})
+
+// create courses collection
+
+db.createCollection("courses")
+db.courses.insert({
+	"courseName":"Javascript",
+	"courseCategory":"Frontend",
+	"courseDuration":"2 Weeks",
+	"courseAuthorName":"RV",
+	"students":[ ObjectId("5f5a5373cab9212a61b78600")]
+})
+
+// create attendance collection
+
+db.createCollection("attendance")
+db.attendance.insert({
+	"attendanceStatus":"Present",
+	"attendanceDate":"10-09-2020"	
+})
+
+// create dailyTasks collection
+
+db.createCollection("dailyTasks")
+db.dailyTasks.insert({
+	"taskName":"DB Type",
+	"taskType":"Backend",
+	"taskGivenDate":"10-09-2020",
+	"taskDeadline":"11-09-2020",
+	"taskUrl":"https://github.com/umesh-lewa/guvi-zen/tree/master/Week_8/Day_38/ZenClassDBSchema"
+})
+
+// create companyDrives collection
+
+db.createCollection("companyDrives")
+db.companyDrives.insert({
+	"companyName":"OrangeScape",
+	"comnpanyDriveDate":"20-09-2020",
+	"companyJD":"Full Stack Developer",
+	"companyType":"Software Services"
+})
+
+// create codekata collection
+
+db.createCollection("codekata")
+db.codekata.insert({
+	"codekataCategoryName":"Array",
+	"codekataQuestionId":"2",
+	"codekataQuestionStatus":"Completed"
+})
