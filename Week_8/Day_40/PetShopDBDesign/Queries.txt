@@ -1,0 +1,40 @@
+
+
+db.pets.insert({
+	"petId":"1",
+	"petType":"Dog",
+	"petName":"Neil",
+	"petStatus":"Available",
+	"petVaccinated":"yes",
+})
+
+db.pets.insert({
+	"petId":"2",
+	"petType":"Cat",
+	"petName":"Dravid",
+	"petStatus":"Available",
+	"petVaccinated":"yes",
+})
+
+db.adoptions.insert({
+	"adoptionId":"1",
+	"adoptedPet": [ObjectId("5f5bacd26064ba4ddaab5669")],
+	"adopteeCustomer" : ObjectId("5f5bad736064ba4ddaab566b")
+})
+
+db.customers.insert({
+	"customerName":"Micheal Caine",
+	"customerAdoptions": [ ObjectId("5f5badc26064ba4ddaab566c")],
+	"customerPhone":"9500130553"
+})
+
+db.employees.insert({
+	"employeeName":"Ranil",
+	"employeePhone":"8525866991",
+	"emplpoyeeAddress":{
+		"Line 2":"20,Janpath Road",
+		"Line 2":"Delhi"
+	},
+	"employeePets": [ ObjectId("5f5bacd26064ba4ddaab5669"), ObjectId("5f5baceb6064ba4ddaab566a")],
+	"employeeAdoptions":[ ObjectId("5f5badc26064ba4ddaab566c")],
+})
