@@ -20,22 +20,31 @@ let teachers = [];
 
 app.post('/addStudent', function (req, res) {
 
+    //let sId = req.params.studentId;
+    let sName = req.body.studentName;
+
    students.push({
-       "id":"",
-       "name":"",
+       "id":students.length+1,
+       "name":sName,
        "teacher":""
    });
 
+   res.send("Student successfully created");
 })
 
 
 app.post('/addTeacher', function (req, res) {
    
+    //let tId = req.params.teacherId;
+    let tName = req.body.teacherName;
+
     teachers.push({
-        "id":"",
-        "name":"",
+        "id":teachers.length+1,
+        "name":tName,
         "students":[]
     })
+
+    res.send("Teacher successfully created");
 })
 
 app.post("/assignStudentToTeacher/:studentId/:teacherId",function (req,res) {
@@ -43,10 +52,10 @@ app.post("/assignStudentToTeacher/:studentId/:teacherId",function (req,res) {
     let sId = req.params.studentId;
     let tId = req.params.teacherId;
 
-    let tName = teacher.find(el => el.id == tId).name;
+    let tName = teachers.find(el => el.id == tId).name;
     students.find(el => el.id == sId).teacher = tName;
 
-    teachers.find(el => el.id == tId).students.push(sID);
+    teachers.find(el => el.id == tId).students.push(sId);
 
     res.end("Student assigned to teacher");
 })
@@ -55,14 +64,14 @@ app.get("/getStudentDetails/:studentId",function (req,res) {
 
     let sId = req.params.studentId;
 
-    res.end(students.find(el => el.id == sId))
+    res.send(students.find(el => el.id == sId))
 })
 
 app.get("/getTeacherDetails/:teacherId",function (req,res) {
 
     let tId = req.params.teacherId;
     
-    res.end(teachers.find(el => el.id == tId))
+    res.send(teachers.find(el => el.id == tId))
 })
 
 // start the server with specified port
