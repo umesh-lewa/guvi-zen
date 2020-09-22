@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+	<button type="button" onClick="something()" class="btn btn-primary">Count</button>
+
+	<p> Count Value </p>
+
+	<br>
+
+	<p id="uniq" > Count Value here </p>
+
+	<script type="text/javascript">
+		var count = 0;
+
+		function something(){
+			count++;
+			document.getElementById("uniq").innerHTML = count;
+		}
+
+	</script>
+</body>
+</html>
