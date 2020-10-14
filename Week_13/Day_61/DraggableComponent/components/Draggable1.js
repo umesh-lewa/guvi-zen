@@ -78,8 +78,10 @@ class Draggable1 extends React.PureComponent {
         return (
             <div className="draggable" ref={this.ref}>
                 {this.props.children}
-                <h3>X-Coordinate - {this.xCoordinate}</h3>
-                <h3>Y-Coordinate - {this.yCoordinate}</h3>
+                {/* 
+                <p>X-Coordinate - {this.xCoordinate}</p>
+                <p>Y-Coordinate - {this.yCoordinate}</p>
+                */}
             </div>
         );
     }
