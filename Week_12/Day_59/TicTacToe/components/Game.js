@@ -8,38 +8,37 @@ const styles = {
 };
 
 const Game = () => {
+
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXisNext] = useState(true);
     const winner = calculateWinner(board);
 
     const handleClick = i => {
+
         const boardCopy = [...board];
-        // If user click an occupied square or if game is won, return
+
         if (winner || boardCopy[i]) return;
-        // Put an X or an O in the clicked square
+
         boardCopy[i] = xIsNext ? '⛌' : 'O';
+
         setBoard(boardCopy);
         setXisNext(!xIsNext);
     }
 
-    const jumpTo = () => {
-
-    }
-
-    const renderMoves = () => (
+    const resetGame = () => (
         <button onClick={() => setBoard(Array(9).fill(null))}>
-            Start Game
+            Reset Game
         </button>
     )
 
     return (
-        <>
+        <div>
             <Board squares={board} onClick={handleClick} />
             <div style={styles}>
-                <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? '⛌' : 'O')}</p>
-                {renderMoves()}
+                <p>{winner ? 'Winner: ' + winner : 'Next Key: ' + (xIsNext ? '⛌' : 'O')}</p>
+                {resetGame()}
             </div>
-        </>
+        </div>
     )
 }
 
