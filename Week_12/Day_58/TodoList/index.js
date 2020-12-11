@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useReducer } from "react";
+import { createStore } from "redux";
 import ReactDOM from "react-dom";
 import Title from "./Components/Title";
 import TaskList from "./Components/TaskList";
@@ -17,7 +18,49 @@ console.log(h1);
 
 //ReactDOM.render(h1, document.querySelector("#app-root"));
 
+const countReducer = (prevState, action) => {
+	switch (action) {
+		case "increment":
+			return prevState + 1;
+
+		case "decrememt":
+			return prevState + 1;
+
+		default:
+			return prevState;
+	}
+}
+
+const countReducerForRedux = (prevState = 0, action) => {
+	switch (action.type) {
+		case "increment":
+			return prevState + 1;
+
+		case "decrememt":
+			return prevState + 1;
+
+		default:
+			return prevState;
+	}
+}
+
+const countReduxStore = createStore(countReducerForRedux);
+
+window.countReduxStore = countReduxStore;
+
+countReduxStore.dispatch({ type: "increment" });
+
+countReduxStore.subscribe(() => {
+	console.log("State updated through redux store", countReduxStore.getState());
+});
+
+countReduxStore.subscribe(() => {
+	console.log("2nd callback function", countReduxStore.getState());
+});
+
+
 const App = () => {
+
 	/*
 	const tasks = [
 		{name:"Some 1",
@@ -58,6 +101,12 @@ const App = () => {
 	const [lowPriorityTasks, setLowPriorityTasks] = useState(0);
 	const [mediumPriorityTasks, setMediumPriorityTasks] = useState(0);
 	const [highPriorityTasks, setHighPriorityTasks] = useState(0);
+
+
+	const [countState, countDispatch] = useReducer(countReducer, 0);
+
+	const onIncrement = () => countDispatch("increment");
+	const onDecrement = () => countDispatch("decrement");
 
 	window.setTasks = setTasks;
 	const toggleTask = (taskIndex) => {
@@ -137,7 +186,7 @@ const App = () => {
 			}
 		});
 
-		console.log("tasks : "+JSON.stringify(tasks));
+		console.log("tasks : " + JSON.stringify(tasks));
 		console.log("completedTasks : " + completedTasks);
 		console.log("pendingTasks : " + pendingTasks);
 
@@ -156,7 +205,7 @@ const App = () => {
 				lowPriorityTasks++;
 			} else if (task.priority == "medium") {
 				mediumPriorityTasks++;
-			} else if (task.priority == "high"){
+			} else if (task.priority == "high") {
 				highPriorityTasks++;
 			}
 		})
@@ -210,9 +259,9 @@ const App = () => {
 			
 			{!isDeleted ? <EmptyElement deleteElement={deleteElement} /> : null}\
 			*/}
-			
+
 			<LoginForm usernameToDisplay="" passowrdToDisplay="" />
-			
+
 		</Fragment>
 	);
 };
